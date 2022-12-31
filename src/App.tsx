@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import 'bulma';
+import '@fortawesome/fontawesome-free/css/all.css';
+import { TodosProvider } from './components/hoc/TodosProvider';
+import { TodoForm } from './components/TodoForm';
+import { TodoList } from './components/TodoList';
+import { TodoStatistics } from './components/TodoStatistics';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+export const App: React.FC = () => (
+  <TodosProvider>
+    <div className="app">
+      <header className="app__header">
+        <h1 className="app__header-title">
+          TODOS
+        </h1>
       </header>
+      <div className="app__todos">
+        <TodoForm />
+        <TodoList />
+        <TodoStatistics />
+      </div>
     </div>
-  );
-}
+  </TodosProvider>
+);
 
 export default App;

@@ -1,0 +1,31 @@
+@import "variables";
+@import "bulma";
+@import "@creativebulma/bulma-tooltip";
+
+.app {
+  max-width: 700px;
+  padding: $paddingApp;
+  margin: 0 auto;
+  color: $fontColor;
+
+  &__header {
+    margin: 0;
+    margin-bottom: $marginBottom;
+
+    &-title {
+      text-align: center;
+      font-size: $titleSize;
+      font-weight: 700;
+      color: $whiteColor;
+      text-shadow: 8px 8px 8px rgba(34, 60, 80, 0.5);
+    }
+  }
+
+  &__todos {
+    background-color: $whiteColor;
+    margin-bottom: 24px;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 8px 8px 8px 0 rgba(34, 60, 80, 0.5);
+  }
+}
