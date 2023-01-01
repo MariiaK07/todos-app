@@ -1,13 +1,25 @@
 @import "../variables";
+@import "../mixins";
 
 .todo-item {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  height: 48px;
+  height: min-content;
+  min-height: 56px;
   width: 100%;
   padding: 8px 16px;
   border-bottom: 1px solid $lightGrayColor;
+  font-size: $fontSize;
+
+  @include forTablet {
+    min-height: 50px;
+    padding: 8px;
+  }
+
+  @include forMobile {
+    font-size: $fontSizeMobile;
+  }
 
   &:last-child {
     border-bottom: transparent;
@@ -40,14 +52,18 @@
 
   &__input {
     height: 32px;
-    color: $grayColor;
     font-size: $fontSize;
+    color: $grayColor;
+
+    @include forMobile {
+      font-size: $fontSizeMobile;
+    }
   }
 
   &__title {
-    font-size: $fontSize;
     word-wrap: break-word;
     cursor: pointer;
+
 
     &--completed {
       opacity: 0.5;

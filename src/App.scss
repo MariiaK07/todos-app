@@ -1,16 +1,26 @@
 @import "variables";
+@import "mixins";
 @import "bulma";
 @import "@creativebulma/bulma-tooltip";
 
 .app {
-  max-width: 700px;
-  padding: $paddingApp;
-  margin: 0 auto;
+  min-height: 100vh;
+  padding: 16px;
   color: $fontColor;
+  background: linear-gradient(
+    45deg,
+    rgba(72,199,142,1) 0%,
+    rgba(62,142,208,1) 50%,
+    rgba(241,70,104,1) 100%
+  );
 
   &__header {
     margin: 0;
     margin-bottom: $marginBottom;
+
+    @include forTablet {
+      margin-bottom: $marginBottomTablet;
+    }
 
     &-title {
       text-align: center;
@@ -18,14 +28,28 @@
       font-weight: 700;
       color: $whiteColor;
       text-shadow: 8px 8px 8px rgba(34, 60, 80, 0.5);
+
+      @include forTablet {
+        font-size: $titleSizeTablet;
+      }
+
+      @include forMobile {
+        font-size: $titleSizeMobile;
+      }
     }
   }
 
   &__todos {
-    background-color: $whiteColor;
-    margin-bottom: 24px;
+    max-width: 700px;
+    margin: 0 auto 24px;
     padding: 32px;
+    background-color: $whiteColor;
     border-radius: 8px;
     box-shadow: 8px 8px 8px 0 rgba(34, 60, 80, 0.5);
+
+    @include forTablet {
+      padding: 24px 16px;
+      margin: 0 auto $marginBottomTablet;
+    }
   }
 }

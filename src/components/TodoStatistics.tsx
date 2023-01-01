@@ -9,7 +9,7 @@ export const TodoStatistics: React.FC = () => {
   const todos = content?.todos;
   const setTodos = content?.setTodos;
 
-  const activeTodos = todos && todos.filter(todo => todo.completed === true).length;
+  const activeTodos = todos && todos.filter(todo => todo.completed === false).length;
   const completedTodos = todos && todos.some(todo => todo.completed === true);
 
   const removeCompletedTodos = () => {
